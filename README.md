@@ -18,19 +18,11 @@ API-GATEWAY -----> Eureka Server (8762)
 USER-SERVICE ----> Eureka Server (8762)
 
 
-
-Aprés,  `user-service` on ajout ça pour Eureka :
-- `spring-cloud-starter-netflix-eureka-client`
-- `spring-cloud.version`
-- `dependencyManagement` 
-
-
-
 ## Etape 1. Creer `user-service` seul
 
-
-
 ## Etape 2. Lier `user-service` a Eureka
+
+#### `user-service`
 
 ### Ce qu'on ajoute dans `pom.xml`
 Ajouter dans `properties` :
@@ -108,6 +100,9 @@ management:
 ### Classe principale
 Ajouter `@EnableEurekaServer`.
 
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+
+
 ## Etape 4. Creer `api-gateway`
 
 
@@ -148,7 +143,4 @@ management:
 
 
 
-docker compose up -d
-
-mvn spring-boot:run
 
